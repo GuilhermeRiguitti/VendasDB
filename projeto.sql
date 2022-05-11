@@ -281,10 +281,10 @@ where qtd_produto > (select avg(qtd_produto)
                      from produto_venda)
 group by descricao, qtd_produto;
 
-select *
-from vw_mediaMaior;
 
-select * from tipo_pag;
+
+select *
+from tipo_pag;
 /*Retorna o nome do cliente, a venda destes clientes, exceto o nome dos clientes e as vendas
   que tiverem sido paga com dinheiro*/
 
@@ -292,7 +292,7 @@ select nome_cliente, id_venda
 from cliente
          inner join venda
                     on cliente.id_cliente = venda.id_cliente
-except
+    except
 select nome_cliente, id_venda
 from cliente
          inner join venda
@@ -311,10 +311,11 @@ select nome_cliente, bairro
 from cliente
 where bairro = 'Dornelas';
 
-select * from cliente;
+select *
+from cliente;
 /*Query que retorna o nome de cada cliente, juntamente com o
   nome de cada produto comprado filtrando por cidade*/
-select nome_cliente, descricao , cidade
+select nome_cliente, descricao, cidade
 from cliente
          inner join venda
                     on cliente.id_cliente = venda.id_cliente
